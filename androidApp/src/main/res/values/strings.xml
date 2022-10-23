@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fido News</string>
+    <string name="news">News</string>
+    <string name="retry">Retry</string>
+    <string name="something_went_wrong">Something Went Wrong</string>
+    <string name="nothing_here">Nothing Here</string>
+
 </resources>

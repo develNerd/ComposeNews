@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "org.paypay.fidonews.android"
+    namespace = "org.fido.fidonews.android"
     compileSdk = 32
     defaultConfig {
-        applicationId = "org.paypay.fidonews.android"
+        applicationId = "org.fido.fidonews.android"
         minSdk = 21
         targetSdk = 32
         versionCode = 1
@@ -44,7 +44,7 @@ dependencies {
     implementation("androidx.compose.material:material:$compose_version")
     implementation("androidx.activity:activity-compose:1.5.1")
     implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("androidx.activity:activity-ktx:1.6.0")
+    implementation("androidx.activity:activity-ktx:1.5.0")
 
 
     //Constraint Layout

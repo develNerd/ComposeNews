@@ -28,7 +28,9 @@ kotlin {
                     implementation(core)
                     implementation(cio)
                     implementation(serialization)
+                    implementation(json_serialization)
                     implementation(logging)
+                    implementation(content_negotiation)
                 }
 
                 with(Deps.KotlinX){
