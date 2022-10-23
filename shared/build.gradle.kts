@@ -40,6 +40,10 @@ kotlin {
                     api(test)
                 }
 
+                with(Deps.Kermit) {
+                    implementation(kermitMain)
+                }
+
                 implementation(kotlin("stdlib-common"))
 
                 with(Deps.Coroutines){
