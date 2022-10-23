@@ -8,7 +8,7 @@ import org.paypay.fidonews.data.network.OnResultObtained
 
 interface ArticlesRepository {
     // TODO( --  StateFlow<OnResultObtained<T>> -- could be replaced by type alias  )
-    suspend fun countryArticles(countryCode:String): StateFlowResult<ArticleResult>
+    suspend fun getArticlesByCountry(countryCode:String): StateFlowResult<ArticleResult>
 }
 
 typealias StateFlowResult<T> = StateFlow<OnResultObtained<T>>

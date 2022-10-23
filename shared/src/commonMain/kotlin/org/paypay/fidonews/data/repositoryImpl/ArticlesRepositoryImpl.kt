@@ -12,14 +12,13 @@ class ArticlesRepositoryImpl(private val api: Api):ArticlesRepository {
 
 
 
-    override suspend fun countryArticles(countryCode: String): StateFlowResult<ArticleResult> =
-        getArticlesByCountry(countryCode).asStateFlow()
 
 
-     private suspend fun getArticlesByCountry(countryCode: String)  =
+
+     override suspend fun getArticlesByCountry(countryCode: String)  =
          makeRequestToApi {
             api.getLatestRates(countryCode)
-        }.toOnResultObtained<ArticleResult>()
+        }.toOnResultObtained<ArticleResult>().asStateFlow()
 
 }
 
