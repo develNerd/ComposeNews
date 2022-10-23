@@ -79,7 +79,16 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        if(mainActivityViewModel.articlesByCountry.value.isLoaded){
+            mainActivityViewModel.getArticlesByCountry(mainActivityViewModel.articlesSupportedCountries.last().code)
+        }
+    }
 }
+
+
 
 @Composable
 fun ArticlesScreen(listOfArticles: List<ArticlesItem>) {
@@ -92,15 +101,13 @@ fun NewsItem(articlesItem: ArticlesItem, onClick: (ArticlesItem) -> Unit) {
         Column(verticalArrangement = Arrangement.spacedBy(spacing10dp), modifier = Modifier.padding(
             spacing10dp)) {
             AsyncImage(
-                model = articlesItem.url,
+                model = articlesItem.urlToImage,
                 contentDescription = "",
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(articleImageHeight)
                     .clip(RoundedCornerShape(size10dp))
-                    .padding(
-                        spacing10dp
-                    ),
+                    ,
                 contentScale = ContentScale.Crop,
             )
             MediumTextBold(text = articlesItem.title)

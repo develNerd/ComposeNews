@@ -30,7 +30,6 @@ fun FidoNewsTheme(
             primaryVariant = Color(0xFF53632D),
             secondary = Color(0xFF03DAC5),
             onBackground = Color.Black,
-            surface = Color(0xFF464949)
         )
     }
     val typography = Typography(
