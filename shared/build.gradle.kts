@@ -1,6 +1,8 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization") version "1.7.10"
+
 }
 
 
@@ -19,7 +21,33 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies{
+                with(Deps.Ktor){
+                    implementation(core)
+                    implementation(cio)
+                    implementation(serialization)
+                    implementation(logging)
+                }
+
+                with(Deps.KotlinX){
+                    implementation(serialization)
+                    implementation(dateTime)
+                }
+
+                with(Deps.Koin) {
+                    api(core)
+                    api(test)
+                }
+
+                implementation(kotlin("stdlib-common"))
+
+                with(Deps.Coroutines){
+                    implementation(coroutines)
+                    implementation(coroutinesNative)
+                }
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
