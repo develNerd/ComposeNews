@@ -52,7 +52,6 @@ sealed class ApiResult<out T : Any> {
         }
     }
 
-
     inline fun <reified Res:Any> toOnResultObtained(): MutableStateFlow<OnResultObtained<Res>> {
         return when (this) {
             is HttpError -> MutableStateFlow(OnResultObtained(result = null,true,error))
