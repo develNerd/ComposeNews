@@ -48,18 +48,25 @@ kotlin {
                 }
 
                 implementation(kotlin("stdlib-common"))
+                implementation("app.cash.turbine:turbine:0.12.1")
+
 
                 with(Deps.Coroutines){
                     implementation(coroutines)
                     implementation(coroutinesNative)
                 }
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("org.jetbrains.kotlin:kotlin-test:1.6.21")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
             }
         }
+
         val androidMain by getting
         val androidTest by getting
         val iosX64Main by getting

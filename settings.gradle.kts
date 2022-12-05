@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "FidoNews"
+rootProject.name = "ComposeNews"
 include(":androidApp")
 include(":shared")

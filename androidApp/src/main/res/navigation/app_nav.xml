@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/newsHomeFragment">
+
+    <fragment
+        android:id="@+id/newsHomeFragment"
+        android:name="org.compose.news.android.presentation.home.NewsHomeFragment"
+        android:label="fragment_news_home"
+         />
+
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="org.compose.news.android.presentation.home.NewsDetailsFragment"
+        android:label="NewsDetailsFragment"
+        />
+
+</navigation>

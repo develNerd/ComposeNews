@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "org.fido.fidonews.android"
+    namespace = "org.compose.news.android"
     compileSdk = 32
     defaultConfig {
-        applicationId = "org.fido.fidonews.android"
+        applicationId = "org.compose.news.android"
         minSdk = 21
         targetSdk = 32
         versionCode = 1
@@ -15,6 +15,12 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    lint {
+        abortOnError = false
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.3.0"
@@ -48,6 +54,9 @@ dependencies {
 
 
     //Constraint Layout
+    //Constraint Layout
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha01")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02")
 
 
@@ -58,6 +67,9 @@ dependencies {
     implementation("androidx.compose.animation:animation:$compose_version")
     // Tooling support (Previews, etc.)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
+    //
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+
 
 
 
@@ -88,5 +100,19 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-service:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1")
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.5.1")
+    implementation("com.google.android.material:material:1.7.0-beta01")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // Feature module Support
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+    // Testing Navigation
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+    // Jetpack Compose Integration
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
 
 }
