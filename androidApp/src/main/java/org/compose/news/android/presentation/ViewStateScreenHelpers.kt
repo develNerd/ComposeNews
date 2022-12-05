@@ -19,14 +19,12 @@ import org.compose.news.android.presentation.viewcomponets.RegularText
 import org.compose.news.android.presentation.viewcomponets.RoundedOutlinedButton
 
 @Composable
-fun <T> GenericListViewRenderer(list:List<T>? = null, loadComplete:Boolean, isError:Boolean = false, emptyStateValue:String = stringResource(id =  R.string.nothing_here), content: @Composable () -> Unit){
+fun <T> GenericListViewRenderer(list:List<T>? = null, loadComplete:Boolean, isError:Boolean = false, emptyStateValue:String = stringResource(id =  R.string.nothing_here),onRetryClicked: () -> Unit, content: @Composable () -> Unit){
     Log.e("loadComplete", loadComplete.toString())
     Crossfade(targetState = list){ retrievedList ->
         when{
             isError -> {
-                ErrorRetryStateScreen(text = stringResource(id = R.string.something_went_wrong)) {
-
-                }
+                ErrorRetryStateScreen(text = stringResource(id = R.string.something_went_wrong),onRetryClicked)
             }
             !loadComplete && retrievedList == null  -> {
                 GenericCircleProgressIndicator()
@@ -51,7 +49,6 @@ fun <T> GenericListViewRenderer(list:List<T>? = null, loadComplete:Boolean, isEr
 fun EmptyStateText(text:String){
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column(verticalArrangement = Arrangement.spacedBy(mediumPadding)) {
-
             RegularText(
                 text = text,
                 color = MaterialTheme.colors.onBackground,

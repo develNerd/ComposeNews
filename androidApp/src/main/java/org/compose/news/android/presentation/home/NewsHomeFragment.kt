@@ -72,7 +72,10 @@ class NewsHomeFragment : BaseComposeFragment() {
             GenericListViewRenderer(
                 articleResult.value.result?.articles,
                 loadComplete = articleResult.value.isLoaded,
-                isError = articleResult.value.error?.isEmpty() == false
+                isError = articleResult.value.error?.isEmpty() == false,
+                onRetryClicked = {
+                    mainActivityViewModel.getArticlesByCountry(mainActivityViewModel.articlesSupportedCountries.last().code)
+                }
             ) {
                 LazyColumn(
                     content = {
@@ -92,6 +95,7 @@ class NewsHomeFragment : BaseComposeFragment() {
     }
 
     override fun viewCreated() {
+        //Code Should be from the UI
         mainActivityViewModel.getArticlesByCountry(mainActivityViewModel.articlesSupportedCountries.last().code)
     }
 
