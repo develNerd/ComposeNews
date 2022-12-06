@@ -9,7 +9,7 @@ import android.view.WindowManager
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
-import org.compose.news.android.FidoNewsTheme
+import org.compose.news.android.ComposeNewsTheme
 
 
 abstract class BaseComposeFragment : Fragment() {
@@ -29,7 +29,7 @@ abstract class BaseComposeFragment : Fragment() {
             this.fitsSystemWindows = true
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
-                FidoNewsTheme() {
+                ComposeNewsTheme() {
                     initCompoUI()
                 }
             }

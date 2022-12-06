@@ -78,7 +78,7 @@ fun Greeting(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    FidoNewsTheme {
+    ComposeNewsTheme {
         Greeting("Hello, Android!")
     }
 }
