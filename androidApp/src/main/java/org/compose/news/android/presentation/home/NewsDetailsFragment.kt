@@ -37,7 +37,7 @@ class NewsDetailsFragment : BaseComposeFragment() {
                     spacing6dp)) {
                     ArticlesImageHeader(articlesItem = currentArticle)
                     RegularText(text = currentArticle.author, size = 14.sp)
-                    RegularText(text = currentArticle.publishedAt, size = 14.sp)
+                    RegularText(text = currentArticle.formatToArticleDate(), size = 14.sp)
                 }
                 RegularTextContent(text = currentArticle.content)
             }
