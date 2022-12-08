@@ -37,7 +37,7 @@ class MainActivityViewModel : BaseViewModel(), KoinComponent {
     }
 
     fun getArticlesByCountry(countryCode: String) {
-        executeApiCallUseCase(viewModelScope, countryCode, newsUseCaseFactory.getArticlesUseCase
+        executeApiCallUseCase(countryCode, newsUseCaseFactory.getArticlesUseCase
         ) { result ->
             Log.e("Result",result.result?.toString() ?: "")
             _articlesByCountry.value = result

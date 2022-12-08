@@ -2,7 +2,9 @@ package org.compose.news.android.core
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import okio.IOException
@@ -14,11 +16,10 @@ abstract class BaseViewModel : ViewModel() {
     data class UIResult<out T>(val result:T?,val isLoaded:Boolean,val error:String? = null)
 
     fun <Input,Output:Any> executeApiCallUseCase(
-        viewModelScope: CoroutineScope,
         inputValue:Input,
         useCase: BaseUseCase<Input, Output>,
         callback: (UIResult<Output>) -> Unit = {}){
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             useCase.dispatch(inputValue).collectLatest {result ->
                 if(result.error != null){
                     Log.e("ERROR OCCURRED", result.error!!.localizedMessage ?: "")
