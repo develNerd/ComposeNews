@@ -8,6 +8,6 @@ The Project shows how to incorporate the following into a KMM Prject
 - The new KMM data store 
 
 SnapShots
-
-![Screenshot_20230219_162726_Compose News (1)](https://user-images.githubusercontent.com/37780207/219965468-28cd6a67-6c81-4ac2-b640-cd81bc5fed23.jpg)
 ![Screenshot_20230219_162719_Compose News (1)](https://user-images.githubusercontent.com/37780207/219965469-ba1b8c2a-cb89-43f1-a757-0735341389d3.jpg)
+![Screenshot_20230219_162726_Compose News (1)](https://user-images.githubusercontent.com/37780207/219965468-28cd6a67-6c81-4ac2-b640-cd81bc5fed23.jpg)
+
